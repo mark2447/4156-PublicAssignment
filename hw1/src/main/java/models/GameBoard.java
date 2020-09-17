@@ -43,5 +43,49 @@ public class GameBoard {
 	  return this.p2;
   }
   
+  public void setGameStarted(boolean gameStarted) {
+	  this.gameStarted = gameStarted;
+  }
   
+  public boolean getGameStarted() {
+	  return this.gameStarted;
+  }
+  
+  public void setTurn(int turn) {
+	  this.turn = turn;
+  }
+  
+  public int getTurn() {
+	  return this.turn;
+  }
+  
+  public void setBoardState(char[][] boardState) {
+	  this.boardState = boardState;
+  }
+  
+  public char[][] getBoardState() {
+	  return this.boardState;
+  }
+  
+  public void setWinner(int winner) {
+	  this.winner = winner;
+  }
+  
+  public int getWinner() {
+	  return this.winner;
+  }
+  
+  public void setIsDraw(boolean isDraw) {
+	  this.isDraw = isDraw;
+  }
+  
+  public boolean getIsDraw() {
+	  return this.isDraw;
+  }
+  
+  public boolean isFull() {
+	  return false;
+  }
 }
+
+
