@@ -29,6 +29,7 @@ class PlayGame {
 	 * @param args Command line arguments
 	 */
 	public static void main(final String[] args) {
+		TicTacToeService ticTacToeService = new TicTacToeService();
 
 		app = Javalin.create(config -> {
 			config.addStaticFiles("/public");
@@ -41,14 +42,19 @@ class PlayGame {
 		// add some endpoints here
 		// new game
 		app.get("/newgame", ctx -> {
+			logger.info("start a new game, please wait...");
 			ctx.redirect("tictactoe.html");
 		});
 		// start the game
 		app.post("/startgame", ctx -> {
-			char requestType = ctx.body().charAt(5);
-			Player player1 = new Player(requestType, 1);
+			logger.info("start the game, please wait for another players to join in");
+			ticTacToeService.startGame(ctx);
 		});
-		
+		// Player2 join the game
+		app.post("/joingame", ctx -> {
+			logger.info("player2 joins in the game");
+			ticTacToeService.joinGame(ctx);
+		});
 		
 		
 		

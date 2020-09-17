@@ -16,6 +16,8 @@ public class GameBoard {
 
   private boolean isDraw;
   
+  private int moveCount;
+  
   //empty constructor
   public GameBoard() {
 	  this.p1 = null;
@@ -23,8 +25,9 @@ public class GameBoard {
 	  this.gameStarted = false;
 	  this.turn = 1;
 	  this.boardState = new char[3][3];
-	  this.winner = 1;
+	  this.winner = 0;
 	  this.isDraw = false;
+	  this.moveCount = 0;
   }
   
   public void setPlayer1(Player p1) {
@@ -32,7 +35,7 @@ public class GameBoard {
   }
   
   public Player getPlayer1() {
-	  return this.p1;
+	  return p1;
   }
   
   public void setPlayer2(Player p2) {
@@ -40,7 +43,7 @@ public class GameBoard {
   }
   
   public Player getPlayer2() {
-	  return this.p2;
+	  return p2;
   }
   
   public void setGameStarted(boolean gameStarted) {
@@ -85,6 +88,14 @@ public class GameBoard {
   
   public boolean isFull() {
 	  return false;
+  }
+  
+  public void setMoveCount(int count) {
+	  this.moveCount = count;
+  }
+  
+  public int getMoveCount() {
+	  return moveCount;
   }
 }
 
